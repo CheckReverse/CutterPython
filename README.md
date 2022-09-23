@@ -1,6 +1,6 @@
 # CutterPython
 ### Description
-Cutter is awesome tool but didn't have method to execute Python script dynamically.
+Cutter is an awesome tool but didn't have method to execute Python script dynamically.
 
 This is a simple plugin to "Execute" python script written for Cutter by selecting script file as IDAPython.
 
