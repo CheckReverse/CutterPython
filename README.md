@@ -4,6 +4,8 @@ Cutter is awesome tool but didn't have method to execute Python script dynamical
 
 This is a simple plugin to "Execute" python script written for Cutter by selecting script file as IDAPython.
 
+Also, it helps to print what exception was thrown from executed script on console.
+
 ### Installation
 Just put CutterPython.py to "python" folder in "plugins" forlder you could find in [Edit] - [Preferences] - [Plugins].
 
