@@ -1,5 +1,6 @@
 import cutter
 from PySide2.QtWidgets import QAction, QFileDialog
+
 class CutterPythonPlugin(cutter.CutterPlugin):
     name = "CutterPython"
     description = "Executes Python script for Cutter"
@@ -19,14 +20,16 @@ class CutterPythonPlugin(cutter.CutterPlugin):
 
     def terminate(self):
         pass
+    
     def executor(self):
         try:
             Filename=QFileDialog.getOpenFileName(caption="Select Python Script", filter="Python Script (*.py)")[0]
             with open(Filename, "r") as f:
                 rBuffer=f.read()
-            exec(rBuffer)
+            exec(rBuffer, globals())
         except Exception as e:
             cutter.message("[!] Script Error!")
             cutter.message(str(e))
+            
 def create_cutter_plugin():
     return CutterPythonPlugin()
