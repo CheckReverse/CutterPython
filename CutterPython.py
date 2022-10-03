@@ -1,5 +1,6 @@
 import cutter
 from PySide2.QtWidgets import QAction, QFileDialog
+from traceback import format_exc
 
 class CutterPythonPlugin(cutter.CutterPlugin):
     name = "CutterPython"
@@ -29,7 +30,7 @@ class CutterPythonPlugin(cutter.CutterPlugin):
             exec(rBuffer, globals())
         except Exception as e:
             cutter.message("[!] Script Error!")
-            cutter.message(str(e))
+            cutter.message(format_exc())
             
 def create_cutter_plugin():
     return CutterPythonPlugin()
